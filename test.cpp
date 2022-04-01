@@ -25,8 +25,8 @@ int main(int argc, char * argv[])
 
     if(argc > 1)
     {
-     std::ifstream mfile;
 
+     std::ifstream mfile;
      mfile.open(argv[1], std::ios::in);
      std::string str;
      std::queue<int> arguments;
@@ -70,10 +70,18 @@ int main(int argc, char * argv[])
     cout <<"Podaj id napoju ktory chcesz kupic: ";
     while(cin >> n )
     {
-        idx = automat.Choose_drink(n);
-        if(idx == -1) {
+        try
+        {
+            idx = automat.Choose_drink(n);
+
+        }
+        catch(std::invalid_argument & exc)
+        {
+            std::cout << exc.what();
+            std::cout << "Podaj ID jeszcze raz: ";
             cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             continue;
+
         }
         cout << "Podaj metode platnosci: 1.Bilon, 2.Blik, 3.Karta: ";
         while(!(cin >> n))

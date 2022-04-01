@@ -66,7 +66,7 @@ int Automat::Choose_drink(const int _id) {
         }
     }
     if (idx == -1) {
-        std::cout << "nie ma takiego napoju!" << std::endl;
+        throw std::invalid_argument("Nie ma takiego ID.");
     }
     return -1;
 }
@@ -79,6 +79,13 @@ void Automat::Choose_payment(const int i)
 
 void Automat::Choose_payment(const int i, const int k)
 {
-    payment_method[i] -> Pay(k);
+    try {
+        payment_method[i] -> Pay(k);
+    }
+    catch(std::invalid_argument & exc)
+    {
+        std::cout << exc.what();
+        exit(1);
+    }
 }
 
