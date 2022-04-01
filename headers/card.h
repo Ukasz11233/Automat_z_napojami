@@ -6,6 +6,7 @@ class Card: public Payment{
 public:
     Card() = default;
     virtual void Pay();
+    virtual void Pay(const int) {Pay();}
 };
 
 #endif

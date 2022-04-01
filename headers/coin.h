@@ -6,7 +6,8 @@
 class Coin: public Payment{
 public:
     Coin() {};
-    virtual void Pay();
+    virtual void Pay() override;
+    virtual void Pay(const int) override;
 };
 
 #endif

@@ -1,4 +1,4 @@
-#include "card.h"
+#include "headers/card.h"
 
 
 void Card::Pay()
