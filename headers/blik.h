@@ -7,7 +7,8 @@ private:
     std::string blik;
 public:
     Blik() = default;
-    virtual void Pay();
+    virtual void Pay() override;
+    virtual void Pay(const int) override;
 };
 
 

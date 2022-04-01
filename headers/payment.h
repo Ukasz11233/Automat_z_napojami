@@ -19,6 +19,7 @@ public:
     virtual void set_to_pay(Price price);
     virtual void Left_to_pay() const;
     virtual void Pay() {};
+    virtual void Pay(const int) {};
 
 
 };

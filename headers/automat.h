@@ -20,6 +20,7 @@ public:
 
     int Choose_drink(const int _id);
     void Choose_payment(const int i);
+    void Choose_payment(const int i, const int k);
 };
 
 #endif

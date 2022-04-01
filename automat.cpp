@@ -1,7 +1,7 @@
-#include "automat.h"
-#include "coin.h"
-#include "blik.h"
-#include "card.h"
+#include "headers/automat.h"
+#include "headers/coin.h"
+#include "headers/blik.h"
+#include "headers/card.h"
 
 Automat::~Automat()
 {
@@ -75,5 +75,10 @@ int Automat::Choose_drink(const int _id) {
 void Automat::Choose_payment(const int i)
 {
     payment_method[i] -> Pay();
+}
+
+void Automat::Choose_payment(const int i, const int k)
+{
+    payment_method[i] -> Pay(k);
 }
 
